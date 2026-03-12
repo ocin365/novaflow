@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaFlow Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="glass-container">
+            <aside class="sidebar">
+                <header>
+                    <h1>Nova<span>Flow</span></h1>
+                </header>
+                <div class="vault">
+                    <h3>Idea Vault</h3>
+                   <div v-for="(note, index) in notes" :key="index" class="note-card" @click="loadNote(index)" style="cursor: pointer;">
+                        <div class="note-header">
+                            <h4>{{ note.title || 'Untitled' }}</h4>
+                            <button class="delete-btn" @click="deleteNote(index)">×</button>
+                        </div>
+                        <p>{{ note.content.substring(0, 50) }}...</p>
+                        <small>{{ note.date }}</small>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="workspace">
+                <div class="top-bar">
+                    <div class="timer-display">{{ formatTime }}</div>
+                    <div class="controls">
+                        <button @click="toggleTimer" class="btn-primary">{{ timerRunning ? 'Pause' : 'Focus' }}</button>
+                        <button @click="resetTimer">Reset</button>
+                    </div>
+                </div>
+
+                <div class="editor">
+                    <input v-model="newNoteTitle" placeholder="Project Name..." class="title-input">
+                    <textarea v-model="currentNote" placeholder="Start your flow..."></textarea>
+                    <button @click="addNote" class="save-btn" :disabled="!currentNote">Archive to Vault</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
