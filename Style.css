@@ -25,7 +25,7 @@ body {
 .glass-container {
     display: grid;
     grid-template-columns: 1fr; /* Mobile default */
-    height: 100%;
+    height: 95%;
     background: var(--glass);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -110,3 +110,20 @@ textarea {
 
 .note-header { display: flex; justify-content: space-between; align-items: flex-start; }
 .delete-btn { background: none; border: none; color: #ff4444; cursor: pointer; }
+
+.btn-primary {
+    background-color: #3b82f6 !important; /* Make it a solid blue */
+    border: 2px solid #60a5fa;
+    color: white;
+    font-weight: 700;
+    border-radius: 15px;
+}
+
+/* Customizing the Reset Button */
+.btn-secondary {
+    background-color: red !important;
+    border: 2px solid lightcoral;
+    color: black;
+    border-radius: 15px;
+    font-weight: 800;
+}
