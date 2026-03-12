@@ -1,7 +1,7 @@
 {
   "name": "NovaFlow",
   "short_name": "NovaFlow",
-  "start_url": "/novaflow/",
+  "start_url": "/novaflow",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
